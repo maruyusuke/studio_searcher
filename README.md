@@ -3,11 +3,10 @@
 
 #概要
 -このwebサイトはダンススタジオを探しやすくするためのサイトです
--GoogleMap上からダンススタジオを探し、スタジオのコンビニエンスストアなどの周辺情報まで見ながら、ダンススタジオサイトの予約ページにアクセスすることができます
+-GoogleMap上からダンススタジオを探すことができます。
 
 #仕組み
 ・バックエンド
--データベースにスクレイピングしたダンススタジオのURL,スタジオの住所から得た経度・緯度を保存（python）
 -データベースから必要な情報をブラウザに渡す（php）
 
 ・フロントエンド
@@ -15,16 +14,14 @@
 
 #サイトURL
 http://maru-infra-aws.work/
--ポートフォリオでのため、平日の10:00~18:00まで公開しています
 
 #使用言語や環境など
-- php 7.2.24
-- Python 3.7.9
+- php 8.0
+- Apache
 - Javascript
-- MySQL 8.0.20
-- AWS（EC2,RDS,Lambda,CloudWatch）
+- MySQL latest
+- AWS（EC2）
 - GoogleMap API
-- Geocode API
 
 #著者
 yusuke
