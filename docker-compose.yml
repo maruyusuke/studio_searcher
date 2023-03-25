@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+
+  # Apache コンテナ
+  apache:
+    build: ./apache
+    ports:
+      - 80:80
+    volumes:
+      - ./html:/var/www/html
+    # environment:
+    #   APACHE_DOCUMENT_ROOT: /var/www/web
+  
+  # MySQL コンテナ
+  mysql:
+    container_name: mysql
+    build: ./mysql
+    ports:
+      - 33060:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/data:/docker-entrypoint-initdb.d
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpass
+      MYSQL_DATABASE: search_studio
+      MYSQL_ROOT_PASSWORD: password
+    
+volumes:
+  mysql-data:
